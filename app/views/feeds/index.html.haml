@@ -1,0 +1,4 @@
+- @entries.each do |entry|
+  .entry{'data-id': entry.entry_id}
+    %a.title{href: "#{extract_uri(entry.content)}"}= entry.title
+    .author= entry.author
