@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navigation' %>
+  <% if current_user.present? %>
+    <%= render 'layouts/navigation' %>
+  <% end %>
   <%= yield %>
 
   <script type='text/javascript'>

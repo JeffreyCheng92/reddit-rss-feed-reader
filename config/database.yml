@@ -13,6 +13,6 @@ test:
 
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
+  database: reddit_rss_production
+  username: root
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
