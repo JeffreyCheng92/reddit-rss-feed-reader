@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require page_navigation
 
@@ -34,7 +33,6 @@ var removeFavorite = function(data, button) {
   $.ajax(url, {
     method: 'DELETE',
     success: function(res, status, xhr) {
-      window.alert('Successfully removed favorite');
       toggleButton(button);
     },
     error: function(xhr, status, err) { window.alert('Something went wrong'); }
