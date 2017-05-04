@@ -1,0 +1,8 @@
+.favorites
+  - @favorites.each do |favorite|
+    .favorite{'data-id': favorite.id}
+      %button.delete REMOVE FAVORITE
+      .favorite-info
+        %a.title{href: favorite.url, title: favorite.title}
+          = truncate(favorite.title, length: 100)
+        .author= favorite.author

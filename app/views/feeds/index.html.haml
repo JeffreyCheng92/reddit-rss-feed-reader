@@ -1,8 +1,14 @@
-- @entries.each do |entry|
-  .entry{'data-id': entry.entry_id}
-    %button.favorite ❤
-    %a.title{href: "#{extract_uri(entry.content)}"}= entry.title
-    .author= entry.author
+.entries
+  - @entries.each_with_index do |entry, idx|
+    - color = idx.even? ? 'even' : 'odd'
+    .entry{class: color, 'data-id': entry.entry_id}
+      - if @favorites[entry.entry_id]
+        %button.unfavorite UNFAVORITE
+      - else
+        %button.favorite FAVORITE
+      .entry-info
+        %a.title{href: "#{extract_uri(entry.content)}"}= entry.title
+        .author= entry.author
 
 :javascript
   document.addEventListener("DOMContentLoaded", function() {

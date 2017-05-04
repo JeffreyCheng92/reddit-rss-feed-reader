@@ -12,7 +12,8 @@ class FeedsController < ApplicationController
     feed = Feedjira::Feed.parse(xml)
 
     @entries = feed.entries
-    favorites = current_user.favorites
+    @favorites = {}
+    current_user.favorites.each { |favorite| @favorites[favorite.uuid] = true }
 
     respond_to do |format|
       format.html

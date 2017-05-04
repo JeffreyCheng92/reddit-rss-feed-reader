@@ -17,7 +17,12 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-
+    @favorite = Favorite.find_by_uuid(params[:id])
+    if @favorite.delete
+      render json: {message: 'Successfully removed favorite'}, status: 200
+    else
+      render json: {message: 'Error removing favorite'}, status: 500
+    end
   end
 
   private
