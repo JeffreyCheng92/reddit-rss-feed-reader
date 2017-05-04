@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170503031914) do
     t.string   "title",      null: false
     t.text     "url",        null: false
     t.string   "author",     null: false
+    t.string   "uuid",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

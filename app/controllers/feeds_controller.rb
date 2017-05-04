@@ -8,11 +8,12 @@ class FeedsController < ApplicationController
     url = "https://www.reddit.com/.rss?count=#{count}"
 
     headers = {"User-Agent" => "web:interview:v1 (by /u/JustJeffHere)"}
-    # xml = HTTParty.get(url, headers: headers).body
-    # feed = Feedjira::Feed.parse(xml)
-    #
-    # @entries = feed.entries
-    @entries = []
+    xml = HTTParty.get(url, headers: headers).body
+    feed = Feedjira::Feed.parse(xml)
+
+    @entries = feed.entries
+    favorites = current_user.favorites
+
     respond_to do |format|
       format.html
     end

@@ -1,4 +1,10 @@
 - @entries.each do |entry|
   .entry{'data-id': entry.entry_id}
+    %button.favorite ❤
     %a.title{href: "#{extract_uri(entry.content)}"}= entry.title
     .author= entry.author
+
+:javascript
+  document.addEventListener("DOMContentLoaded", function() {
+    addFavoriteListeners();
+  });

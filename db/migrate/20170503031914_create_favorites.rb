@@ -5,6 +5,7 @@ class CreateFavorites < ActiveRecord::Migration
       t.string :title, null: false
       t.text :url, null: false
       t.string :author, null: false
+      t.string :uuid, null: false
 
       t.timestamps null: false
     end
