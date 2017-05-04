@@ -1,0 +1,5 @@
+.navbar
+  .navbar-action
+    %a{href: favorites_url} My Favorites
+  .navbar-action
+    = link_to "Sign out", destroy_user_session_path, method: :delete
