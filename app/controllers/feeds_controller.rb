@@ -4,7 +4,6 @@ class FeedsController < ApplicationController
   def index
     @count, @before, @after = params[:count], params[:before], params[:after]
     url = "https://www.reddit.com/.rss?#{create_query_string}"
-    # https://www.reddit.com/.rss?count=25&after=t3_694ioc
     headers = {"User-Agent" => "web:interview:v1 (by /u/JustJeffHere)"}
     xml = HTTParty.get(url, headers: headers).body
     feed = Feedjira::Feed.parse(xml)
