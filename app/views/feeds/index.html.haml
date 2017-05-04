@@ -7,7 +7,8 @@
       - else
         %button.favorite FAVORITE
       .entry-info
-        %a.title{href: "#{extract_uri(entry.content)}"}= entry.title
+        %a.title{href: entry.url, title: entry.title}
+          = truncate(entry.title, length: 100)
         .author= entry.author
 
 :javascript

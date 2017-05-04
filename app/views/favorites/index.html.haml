@@ -1,8 +1,14 @@
 .favorites
-  - @favorites.each do |favorite|
-    .favorite{'data-id': favorite.id}
-      %button.delete REMOVE FAVORITE
+  - @favorites.each_with_index do |favorite, idx|
+    - color = idx.even? ? 'even' : 'odd'
+    .favorite{class: color, 'data-id': favorite.uuid}
+      %button.delete REMOVE
       .favorite-info
         %a.title{href: favorite.url, title: favorite.title}
           = truncate(favorite.title, length: 100)
         .author= favorite.author
+
+:javascript
+  document.addEventListener("DOMContentLoaded", function() {
+    addDeleteFavoriteListener();
+  });

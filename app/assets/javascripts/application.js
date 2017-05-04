@@ -68,3 +68,25 @@ addFavoriteListeners = function() {
     removeFavorite(data, $(e.currentTarget));
   });
 };
+
+// For the favorites index page
+addDeleteFavoriteListener = function() {
+  $('button.delete').click(function(e) {
+    e.preventDefault();
+    var parent = $(e.currentTarget).parent('.favorite');
+
+    data = {
+      favorite: { uuid: parent.data('id') }
+    };
+
+    var url = '/favorites/' + data.favorite.uuid + '.json';
+
+    $.ajax(url, {
+      method: 'DELETE',
+      success: function(res, status, xhr) {
+        parent.remove();
+      },
+      error: function(xhr, status, err) { window.alert('Something went wrong'); }
+    });
+  });
+};

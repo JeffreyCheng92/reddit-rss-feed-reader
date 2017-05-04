@@ -33,19 +33,21 @@
 
 .entries {
   .entry {
+    padding: 5px 0;
     white-space: nowrap;
-    
+
     &.even {
       background-color: #ddd
     }
 
     button {
-      padding: 13px 5px
+      padding: 13px 5px;
+      width: 100px
     }
 
     .entry-info {
       display: inline-block;
-      height: 40px;
+      height: 20px;
       margin: 5px;
       vertical-align: text-bottom;
 
@@ -59,10 +61,16 @@
 
 .favorites {
   .favorite {
+    padding: 5px 0;
     white-space: nowrap;
+
+    &.even {
+      background-color: #ddd
+    }
 
     button {
       padding: 13px 5px;
+      width: 100px
     }
 
     .favorite-info {
