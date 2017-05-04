@@ -13,6 +13,8 @@ test:
 
 production:
   <<: *default
-  database: reddit_rss_production
-  username: root
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: d5f9lndn3l6fck
+  user: vqeonxehibwqmp
+  password: fa4aa43fefa85689c3b2ce24a4a86ceba5031b8ea8a5644bb33b11dee2e72cb7
+  host: ec2-54-243-253-17.compute-1.amazonaws.com
+  port: 5432
