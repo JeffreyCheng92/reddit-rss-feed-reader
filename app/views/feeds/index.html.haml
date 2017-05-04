@@ -10,6 +10,7 @@
         %a.title{href: entry.url, title: entry.title}
           = truncate(entry.title, length: 100)
         .author= entry.author
+= render 'layouts/page_navigation'
 
 :javascript
   document.addEventListener("DOMContentLoaded", function() {
