@@ -1,0 +1,4 @@
+.page-navigation
+  - display = @count.blank? ? 'none' : 'inline-block'
+  %button.prev-page{style: "display: #{display}"} Prev Page
+  %button.next-page Next Page

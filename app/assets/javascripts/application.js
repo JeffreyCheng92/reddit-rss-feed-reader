@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require page_navigation
 
 var toggleButton = function(button) {
   if (button.hasClass('favorite')) {

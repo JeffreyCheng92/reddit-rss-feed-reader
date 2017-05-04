@@ -9,6 +9,10 @@
 <body>
   <%= render 'layouts/navigation' %>
   <%= yield %>
+  <%= render 'layouts/page_navigation' %>
 
+  <script type='text/javascript'>
+    addPageNavigationListeners();
+  </script>
 </body>
 </html>
